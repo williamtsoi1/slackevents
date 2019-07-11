@@ -1,0 +1,22 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: slackevents
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: gcr.io/cloudylabs-public/slackevents:0.1.2
+            env:
+              - name: SLACK_CHANNEL
+                valueFrom:
+                  secretKeyRef:
+                    name: slack-notif-secrets
+                    key: SLACK_CHANNEL # CLE5QH8A2
+              - name: SLACK_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: slack-notif-secrets
+                    key: SLACK_TOKEN
