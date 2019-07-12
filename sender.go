@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	token   = ev.MustGetEnvVar("SLACK_API_TOKEN", "")
+	token   = ev.MustGetEnvVar("SLACK_TOKEN", "")
 	channel = ev.MustGetEnvVar("SLACK_CHANNEL", "")
 )
 

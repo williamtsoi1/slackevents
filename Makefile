@@ -12,7 +12,7 @@ mod:
 image: mod
 	gcloud builds submit \
 		--project cloudylabs-public \
-		--tag gcr.io/cloudylabs-public/slackevents:0.1.2
+		--tag gcr.io/cloudylabs-public/slackevents:0.1.3
 
 # DEPLOYMENT
 service:
